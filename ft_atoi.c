@@ -6,7 +6,15 @@
 /*   By: ebouvier <ebouvier@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/09 13:30:28 by ebouvier          #+#    #+#             */
-/*   Updated: 2023/04/09 13:30:28 by ebouvier         ###   ########.fr       */
+/*   Updated: 2023/04/09 16:13:33 by ebouvier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+int ft_atoi(const char *s)
+{
+    int sign;
+
+    sign = 1;
+    (void)s;
+    return sign;
+}
