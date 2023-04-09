@@ -1,5 +1,5 @@
 NAME = libft.a
-CC = gcc
+CC = cc
 CFLAGS = -Wall -Wextra -Werror
 AR = ar
 ARFLAGS = rcs
@@ -11,6 +11,10 @@ SRCS = ft_isalpha.c ft_isdigit.c ft_isalnum.c ft_isascii.c ft_isprint.c \
 	   ft_atoi.c ft_calloc.c ft_strdup.c
 
 OBJS = $(SRCS:.c=.o)
+
+TEST_SRCS = $(wildcard tests/test_ft_*.c)
+TEST_OBJS = $(TEST_SRCS:.c=.o)
+TEST_EXEC = test_executable
 
 all: $(NAME)
 
@@ -28,4 +32,11 @@ fclean: clean
 
 re: fclean all
 
-.PHONY: all clean fclean re
+test: $(NAME) $(TEST_OBJS)
+	$(CC) $(CFLAGS) -o $(TEST_EXEC) $(TEST_OBJS) -L. -lft
+	./$(TEST_EXEC)
+
+$(TEST_OBJS): %.o: %.c
+	$(CC) $(CFLAGS) -I. -c $< -o $@
+
+.PHONY: all clean fclean re test

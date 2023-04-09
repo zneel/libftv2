@@ -6,11 +6,13 @@
 /*   By: ebouvier <ebouvier@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/09 13:30:19 by ebouvier          #+#    #+#             */
-/*   Updated: 2023/04/09 13:30:22 by ebouvier         ###   ########.fr       */
+/*   Updated: 2023/04/09 15:33:29 by ebouvier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef LIBFT_H
 #define LIBFT_H
+
+size_t  ft_strlen(const char *s);
 
 #endif
