@@ -19,6 +19,6 @@ int main(void)
     else
     {
         printf("ft_memset test failed!\n");
-        return 1;
+        abort();
     }
 }
