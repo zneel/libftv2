@@ -6,7 +6,7 @@
 /*   By: ebouvier <ebouvier@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/09 13:30:19 by ebouvier          #+#    #+#             */
-/*   Updated: 2023/04/25 13:57:38 by ebouvier         ###   ########.fr       */
+/*   Updated: 2023/04/25 14:33:55 by ebouvier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,5 +31,8 @@ char    *ft_strdup(const char *s);
 void    *ft_memset(void *s, int c, size_t n);
 void    *ft_memmove(void *dest, const void *src, size_t n);
 void    *ft_memcpy(void *dest, const void *src, size_t n);
+void    ft_bzero(void *s, size_t n);
+
+void    *ft_calloc(size_t nmemb, size_t size);
 
 #endif
