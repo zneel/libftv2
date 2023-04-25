@@ -6,7 +6,7 @@
 /*   By: ebouvier <ebouvier@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/09 13:30:19 by ebouvier          #+#    #+#             */
-/*   Updated: 2023/04/09 16:14:37 by ebouvier         ###   ########.fr       */
+/*   Updated: 2023/04/25 12:58:03 by ebouvier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,5 +25,7 @@ int ft_isprint(int c);
 int ft_isdigit(int c);
 int ft_isascii(int c);
 int ft_isalpha(int c);
+
+char *ft_strdup(const char *s);
 
 #endif

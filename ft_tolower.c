@@ -6,13 +6,13 @@
 /*   By: ebouvier <ebouvier@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/09 13:31:23 by ebouvier          #+#    #+#             */
-/*   Updated: 2023/04/09 15:53:17 by ebouvier         ###   ########.fr       */
+/*   Updated: 2023/04/25 12:44:48 by ebouvier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 int ft_tolower(int c)
 {
     if (c >= 'A' && c <= 'Z')
-        return (c - 32);
+        return (c + 32);
     return (c);
 }
