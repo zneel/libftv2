@@ -6,7 +6,7 @@
 /*   By: ebouvier <ebouvier@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/25 15:35:52 by ebouvier          #+#    #+#             */
-/*   Updated: 2023/04/25 16:12:51 by ebouvier         ###   ########.fr       */
+/*   Updated: 2023/04/25 16:18:36 by ebouvier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,7 +43,7 @@ char    *ft_itoa(int n)
         sign = 1;
         n = -n;
     }
-    new = malloc(sizeof(char *) * (nbr_len + 1));
+    new = ft_calloc(nbr_len + 1, sizeof(char *));
     if (!new)
         return (NULL);
     new[nbr_len] = 0;
