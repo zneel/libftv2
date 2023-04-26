@@ -1,6 +1,7 @@
 {
     "files.associations": {
         "random": "c",
-        "libft.h": "c"
+        "libft.h": "c",
+        "functional": "c"
     }
 }

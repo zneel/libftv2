@@ -6,7 +6,7 @@
 /*   By: ebouvier <ebouvier@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/09 13:31:16 by ebouvier          #+#    #+#             */
-/*   Updated: 2023/04/25 12:48:47 by ebouvier         ###   ########.fr       */
+/*   Updated: 2023/04/26 16:11:15 by ebouvier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,10 +14,10 @@
 
 size_t  ft_strlen(const char *s)
 {
-    const char *cpy;
+    const char *ptr;
 
-    cpy = s;
-    while (*cpy)
-        cpy++;
-    return (cpy - s);
+    ptr = s;
+    while (*ptr)
+        ptr++;
+    return (ptr - s);
 }

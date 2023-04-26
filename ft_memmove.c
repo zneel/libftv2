@@ -6,7 +6,7 @@
 /*   By: ebouvier <ebouvier@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/09 13:30:49 by ebouvier          #+#    #+#             */
-/*   Updated: 2023/04/25 13:58:47 by ebouvier         ###   ########.fr       */
+/*   Updated: 2023/04/26 15:28:09 by ebouvier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 void    *ft_memmove(void *dest, const void *src, size_t n)
 {
-    size_t              i;
+    size_t  i;
 
     i = n;
     if (dest < src)

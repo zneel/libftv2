@@ -6,7 +6,7 @@
 /*   By: ebouvier <ebouvier@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/25 15:10:30 by ebouvier          #+#    #+#             */
-/*   Updated: 2023/04/25 15:18:24 by ebouvier         ###   ########.fr       */
+/*   Updated: 2023/04/26 15:41:46 by ebouvier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,6 @@ void    ft_putnbr_fd(int n, int fd)
         l = -l;
     }
     if (l > 9)
-        ft_putnbr_fd(n / 10, fd);
-    ft_putchar_fd(n % 10 + 48, fd);
+        ft_putnbr_fd(l / 10, fd);
+    ft_putchar_fd(l % 10 + 48, fd);
 }

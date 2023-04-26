@@ -6,7 +6,7 @@
 /*   By: ebouvier <ebouvier@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/09 13:30:30 by ebouvier          #+#    #+#             */
-/*   Updated: 2023/04/25 14:27:32 by ebouvier         ###   ########.fr       */
+/*   Updated: 2023/04/26 14:26:57 by ebouvier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,11 @@
 
 void ft_bzero(void *s, size_t n)
 {
-    if (n > 0)
-        while (n--)
-            *(unsigned char *)s++ = 0;
+    unsigned char   *ptr;
+
+    ptr = (unsigned char *)s;
+    if (n == 0)
+        return ;
+    while (n--)
+        *ptr++ = 0;
 }
