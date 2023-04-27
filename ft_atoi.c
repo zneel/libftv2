@@ -6,7 +6,7 @@
 /*   By: ebouvier <ebouvier@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/09 13:30:28 by ebouvier          #+#    #+#             */
-/*   Updated: 2023/04/26 14:23:15 by ebouvier         ###   ########.fr       */
+/*   Updated: 2023/04/27 16:59:20 by ebouvier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,13 +14,13 @@
 
 int ft_isspace(int c)
 {
-    return ((c >= 8 && c <= 13) || c == 32);
+    return (c == ' ' || c == '\f' || c == '\t' || c == '\n' || c == '\r' || c == '\v');
 }
 
 int ft_atoi(const char *s)
 {
-    int         sign;
-    int         res;
+    int sign;
+    int res;
 
     sign = 1;
     res = 0;
@@ -33,6 +33,6 @@ int ft_atoi(const char *s)
         s++;
     }
     while (ft_isdigit(*s))
-        res = res * 10 + (*s++ - 48);
+        res = res * 10 + *s++ - '0';
     return (res * sign);
 }

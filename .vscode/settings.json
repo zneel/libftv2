@@ -2,6 +2,7 @@
     "files.associations": {
         "random": "c",
         "libft.h": "c",
-        "functional": "c"
+        "functional": "c",
+        "algorithm": "c"
     }
 }

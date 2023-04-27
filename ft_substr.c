@@ -1,22 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strchr.c                                        :+:      :+:    :+:   */
+/*   ft_substr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ebouvier <ebouvier@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/04/09 13:30:53 by ebouvier          #+#    #+#             */
-/*   Updated: 2023/04/26 19:18:20 by ebouvier         ###   ########.fr       */
+/*   Created: 2023/04/26 19:54:24 by ebouvier          #+#    #+#             */
+/*   Updated: 2023/04/27 20:12:20 by ebouvier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char    *ft_strchr(const char *s, int c)
+char *ft_substr(char const *s, unsigned int start, size_t len)
 {
-    while (*s && *s != (char)c)
-        s++;
-    if (*s == (char)c)
-        return ((char *)s);
-    return (NULL);
+    char    *new;
+    size_t  slen;
+
+    if (!s)
+        return (NULL);
+    slen = ft_strlen(s);
+    if (start >= slen)
+        start = slen;
+    if (len > slen - start)
+        len = slen - start;
+    new = (char *)malloc((len + 1) * sizeof(char));
+    if (!new)
+        return (NULL);
+    ft_memcpy(new, s + start, len);
+    new[len] = 0;
+    return (new);
 }
