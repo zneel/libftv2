@@ -1,26 +1,17 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memmove.c                                       :+:      :+:    :+:   */
+/*   ft_lstmap.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ebouvier <ebouvier@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/04/09 13:30:49 by ebouvier          #+#    #+#             */
-/*   Updated: 2023/04/28 18:42:16 by ebouvier         ###   ########.fr       */
+/*   Created: 2023/04/28 19:50:20 by ebouvier          #+#    #+#             */
+/*   Updated: 2023/04/28 19:50:35 by ebouvier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_memmove(void *dest, const void *src, size_t n)
+t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 {
-	size_t	i;
-
-	i = n;
-	if (dest < src)
-		ft_memcpy(dest, src, n);
-	else
-		while (i--)
-			*(unsigned char *)(dest + i) = *(unsigned char *)(src + i);
-	return (dest);
 }
