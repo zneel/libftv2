@@ -6,18 +6,18 @@
 /*   By: ebouvier <ebouvier@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/26 20:36:57 by ebouvier          #+#    #+#             */
-/*   Updated: 2023/04/27 17:33:41 by ebouvier         ###   ########.fr       */
+/*   Updated: 2023/04/28 13:54:43 by ebouvier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void    ft_striteri(char *s, void (*f)(unsigned int, char*))
+void	ft_striteri(char *s, void (*f)(unsigned int, char *))
 {
-    size_t  i;
+	size_t	i;
 
-    i = 0;
-    if (s && f)
-        while (*s)
-            (*f)(i++, s++);
+	i = 0;
+	if (s && f)
+		while (*s)
+			(*f)(i++, s++);
 }

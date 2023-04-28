@@ -6,27 +6,25 @@
 /*   By: ebouvier <ebouvier@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/09 13:31:21 by ebouvier          #+#    #+#             */
-/*   Updated: 2023/04/27 20:53:03 by ebouvier         ###   ########.fr       */
+/*   Updated: 2023/04/28 14:00:01 by ebouvier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 #include <limits.h>
 
-char *ft_strrchr(const char *s, int c)
+char	*ft_strrchr(const char *s, int c)
 {
-    char    *ptr;
+	char	*ptr;
 
-    ptr = NULL;
-    while (*s)
-    {
-        if (*s == (unsigned char)c)
-            ptr = (char *)s;
-        s++;
-    }
-
-    if ((unsigned char)c == 0)
-        ptr = (char *)s;
-
-    return ptr;
+	ptr = NULL;
+	while (*s)
+	{
+		if (*s == (unsigned char)c)
+			ptr = (char *)s;
+		s++;
+	}
+	if ((unsigned char)c == 0)
+		ptr = (char *)s;
+	return (ptr);
 }

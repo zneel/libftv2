@@ -6,13 +6,13 @@
 /*   By: ebouvier <ebouvier@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/09 13:31:25 by ebouvier          #+#    #+#             */
-/*   Updated: 2023/04/25 12:44:41 by ebouvier         ###   ########.fr       */
+/*   Updated: 2023/04/28 14:05:34 by ebouvier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int ft_toupper(int c)
+int	ft_toupper(int c)
 {
-    if (c >= 'a' && c <= 'z')
-        return (c - 32);
-    return (c);
+	if (c >= 'a' && c <= 'z')
+		return (c - 32);
+	return (c);
 }
