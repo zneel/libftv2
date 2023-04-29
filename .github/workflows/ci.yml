@@ -15,8 +15,18 @@ jobs:
         sudo apt-get update
         sudo apt-get install -y clang libbsd-dev
 
-    - name: Build and run tests
+    - name: Build
       run: |
         export CC=clang
         make
-        make test
+
+    - name: Run tests
+      run: |
+        export CC=clang
+        make -f Makefile.test test
+
+    - name: Build release
+      if: github.event_name == 'push' && github.ref == 'refs/heads/main'
+      run: |
+        export CC=clang
+        make -f Makefile.release release
