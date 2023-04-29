@@ -5,10 +5,11 @@ RELEASE_SRCS = $(filter-out $(TEST_SRCS), $(SRCS))
 RELEASE_OBJS = $(RELEASE_SRCS:.c=.o)
 ZIP_FILES = Makefile libft.h $(RELEASE_SRCS)
 
-release: $(RELEASE_OBJS)
-	zip $(RELEASE_NAME).zip $(ZIP_FILES) 
+release: CFLAGS += -O2
+release: $(NAME)
+	zip $(RELEASE_NAME).zip $(ZIP_FILES)
 
 clean_release:
-	rm -f $(RELEASE_OBJS) $(RELEASE_NAME).zip
+	rm -f $(RELEASE_NAME).zip
 
 .PHONY: release clean_release

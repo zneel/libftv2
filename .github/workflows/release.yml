@@ -6,7 +6,6 @@ on:
 
 jobs:
   build_and_release:
-    permissions: write-all
     runs-on: ubuntu-latest
 
     steps:
@@ -18,17 +17,27 @@ jobs:
         sudo apt-get update
         sudo apt-get install -y clang libbsd-dev
 
-    - name: Build release
+    - name: Build and create archive
       run: |
         export CC=clang
         make -f Makefile.release release
 
-    - name: Upload release asset
+    - name: Upload release asset (zip)
       uses: actions/upload-release-asset@v1
       env:
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        GITHUB_TOKEN: ${{ secrets.RELEASE_UPLOAD_TOKEN }}
       with:
         upload_url: ${{ github.event.release.upload_url }}
-        asset_path: ./libft_release.zip
-        asset_name: libft_release.zip
+        asset_path: ./$(RELEASE_NAME).zip
+        asset_name: $(RELEASE_NAME).zip
         asset_content_type: application/zip
+
+    - name: Upload release asset (a)
+      uses: actions/upload-release-asset@v1
+      env:
+        GITHUB_TOKEN: ${{ secrets.RELEASE_UPLOAD_TOKEN }}
+      with:
+        upload_url: ${{ github.event.release.upload_url }}
+        asset_path: ./$(NAME)
+        asset_name: $(NAME)
+        asset_content_type: application/octet-stream
