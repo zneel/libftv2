@@ -17,6 +17,12 @@ jobs:
         sudo apt-get update
         sudo apt-get install -y clang libbsd-dev
 
+   - name: Download libft artifact
+      uses: actions/download-artifact@v2
+      with:
+        name: libft_artifact
+        path: .
+
     - name: Build and create archive
       run: |
         export CC=clang
