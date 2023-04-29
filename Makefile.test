@@ -10,6 +10,6 @@ clean_tests:
 	rm -f $(TEST_EXES)
 
 %.out: %.c $(NAME)
-	$(CC) $(CFLAGS) -I. -o $@ $< $(NAME)
+	$(CC) $(CFLAGS) -fsanitize=address -lbsd -g3 -I. -o $@ $< $(NAME)
 
 .PHONY: test clean_tests
