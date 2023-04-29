@@ -28,8 +28,8 @@ jobs:
         GITHUB_TOKEN: ${{ secrets.RELEASE_UPLOAD_TOKEN }}
       with:
         upload_url: ${{ github.event.release.upload_url }}
-        asset_path: ./$(RELEASE_NAME).zip
-        asset_name: $(RELEASE_NAME).zip
+        asset_path: ./libft_release.zip
+        asset_name: libft_release.zip
         asset_content_type: application/zip
 
     - name: Upload release asset (a)
@@ -38,6 +38,6 @@ jobs:
         GITHUB_TOKEN: ${{ secrets.RELEASE_UPLOAD_TOKEN }}
       with:
         upload_url: ${{ github.event.release.upload_url }}
-        asset_path: ./$(NAME)
-        asset_name: $(NAME)
+        asset_path: ./libft.a
+        asset_name: libft.a
         asset_content_type: application/octet-stream
