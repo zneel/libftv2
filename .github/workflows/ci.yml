@@ -34,7 +34,7 @@ jobs:
         make -f Makefile.test test
 
     - name: Upload artifact
-      uses: actions/upload-artifact@v2
+      uses: actions/upload-artifact@v3
       with:
         name: libft_artifact
         path: ./libft.a
