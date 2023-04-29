@@ -6,7 +6,7 @@
 /*   By: ebouvier <ebouvier@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/09 13:30:52 by ebouvier          #+#    #+#             */
-/*   Updated: 2023/04/28 13:31:36 by ebouvier         ###   ########.fr       */
+/*   Updated: 2023/04/29 13:36:11 by ebouvier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 void	*ft_memset(void *s, int c, size_t n)
 {
-	unsigned char   *area;
+	unsigned char	*area;
 
 	area = (unsigned char *)s;
 	while (n--)

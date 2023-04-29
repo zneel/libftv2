@@ -6,7 +6,7 @@
 /*   By: ebouvier <ebouvier@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/25 15:10:30 by ebouvier          #+#    #+#             */
-/*   Updated: 2023/04/28 13:31:54 by ebouvier         ###   ########.fr       */
+/*   Updated: 2023/04/29 13:35:55 by ebouvier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 void	ft_putnbr_fd(int n, int fd)
 {
-	long    l;
+	long	l;
 
 	l = n;
 	if (l < 0)
