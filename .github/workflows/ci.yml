@@ -43,17 +43,11 @@ jobs:
       uses: Ilshidur/action-discord@master
       with:
         args: "CI build for ${{ github.repository }} completed successfully!"
-        webhook: ${{ secrets.DISCORD_WEBHOOK_URL }}
-        username: GitHub CI
-        avatar_url: https://avatars.githubusercontent.com/u/9919
     - name: Notify Discord on failure
       if: failure()
       uses: Ilshidur/action-discord@master
       with:
         args: "CI build for ${{ github.repository }} failed. Check the logs for details."
-        webhook: ${{ secrets.DISCORD_WEBHOOK_URL }}
-        username: GitHub CI
-        avatar_url: https://avatars.githubusercontent.com/u/9919
 
   build_and_release_on_tags:
     if: startsWith(github.ref, 'refs/tags/')
