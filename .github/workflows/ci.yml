@@ -40,7 +40,7 @@ jobs:
         path: ./libft.a
     - name: Notify Discord on success
       if: success()
-      uses: Ilshidur/action-discord@2.1.0
+      uses: Ilshidur/action-discord@master
       with:
         args: "CI build for ${{ github.repository }} completed successfully!"
         webhook: ${{ secrets.DISCORD_WEBHOOK_URL }}
@@ -48,7 +48,7 @@ jobs:
         avatar_url: https://avatars.githubusercontent.com/u/9919
     - name: Notify Discord on failure
       if: failure()
-      uses: Ilshidur/action-discord@2.1.0
+      uses: Ilshidur/action-discord@master
       with:
         args: "CI build for ${{ github.repository }} failed. Check the logs for details."
         webhook: ${{ secrets.DISCORD_WEBHOOK_URL }}
