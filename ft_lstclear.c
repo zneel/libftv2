@@ -6,7 +6,7 @@
 /*   By: ebouvier <ebouvier@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/28 19:36:02 by ebouvier          #+#    #+#             */
-/*   Updated: 2023/04/28 19:40:33 by ebouvier         ###   ########.fr       */
+/*   Updated: 2023/04/30 12:57:06 by ebouvier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ void	ft_lstclear(t_list **lst, void (*del)(void *))
 	tail = NULL;
 	while (current)
 	{
-		(*del)(current->content);
+		del(current->content);
 		tail = current;
 		current = current->next;
 		free(tail);
