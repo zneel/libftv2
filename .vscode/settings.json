@@ -3,7 +3,8 @@
         "random": "c",
         "libft.h": "c",
         "functional": "c",
-        "algorithm": "c"
+        "algorithm": "c",
+        "get_next_line.h": "c"
     },
     "editor.insertSpaces": false,
     "editor.tabSize": 4

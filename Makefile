@@ -4,20 +4,16 @@ CFLAGS = -Wall -Wextra -Werror
 AR = ar
 ARFLAGS = rcs
 
-SRCS = ft_isalpha.c ft_isdigit.c ft_isalnum.c ft_isascii.c ft_isprint.c \
-	   ft_strlen.c ft_memset.c ft_bzero.c ft_memcpy.c ft_memmove.c \
-	   ft_strlcpy.c ft_strlcat.c ft_toupper.c ft_tolower.c ft_strchr.c \
-	   ft_strrchr.c ft_strncmp.c ft_memchr.c ft_memcmp.c ft_strnstr.c \
-	   ft_atoi.c ft_calloc.c ft_strdup.c ft_putchar_fd.c ft_putendl_fd.c \
-	   ft_putnbr_fd.c ft_putstr_fd.c ft_itoa.c ft_split.c ft_striteri.c \
-	   ft_strjoin.c ft_strmapi.c ft_strtrim.c ft_substr.c
+INCLUDES = -I./includes
+
+SRCS = sources/conv/ft_atoi.c sources/conv/ft_itoa.c \
+       sources/ctypes/ft_isalnum.c sources/ctypes/ft_isalpha.c sources/ctypes/ft_isascii.c sources/ctypes/ft_isdigit.c sources/ctypes/ft_isprint.c sources/ctypes/ft_tolower.c sources/ctypes/ft_toupper.c \
+       sources/io/ft_putchar_fd.c sources/io/ft_putendl_fd.c sources/io/ft_putnbr_fd.c sources/io/ft_putstr_fd.c sources/io/get_next_line.c sources/io/get_next_line_utils.c \
+       sources/lists/ft_lstadd_back.c sources/lists/ft_lstadd_front.c sources/lists/ft_lstclear.c sources/lists/ft_lstdelone.c sources/lists/ft_lstiter.c sources/lists/ft_lstlast.c sources/lists/ft_lstmap.c sources/lists/ft_lstnew.c sources/lists/ft_lstsize.c \
+       sources/mem/ft_bzero.c sources/mem/ft_calloc.c sources/mem/ft_memchr.c sources/mem/ft_memcmp.c sources/mem/ft_memcpy.c sources/mem/ft_memmove.c sources/mem/ft_memset.c \
+       sources/strings/ft_split.c sources/strings/ft_strchr.c sources/strings/ft_strdup.c sources/strings/ft_striteri.c sources/strings/ft_strjoin.c sources/strings/ft_strlcat.c sources/strings/ft_strlcpy.c sources/strings/ft_strlen.c sources/strings/ft_strmapi.c sources/strings/ft_strncmp.c sources/strings/ft_strnstr.c sources/strings/ft_strrchr.c sources/strings/ft_strtrim.c sources/strings/ft_substr.c
 
 OBJS = $(SRCS:.c=.o)
-
-SRCS_BONUS = 	ft_lstnew.c ft_lstadd_front.c ft_lstsize.c ft_lstlast.c \
-				ft_lstadd_back.c ft_lstdelone.c ft_lstclear.c ft_lstiter.c \
-				ft_lstmap.c
-OBJS_BONUS = $(SRCS_BONUS:.c=.o)
 
 all: $(NAME)
 
@@ -25,17 +21,14 @@ $(NAME): $(OBJS)
 	$(AR) $(ARFLAGS) $(NAME) $(OBJS)
 
 %.o: %.c
-	$(CC) $(CFLAGS) -c $< -o $@
+	$(CC) $(CFLAGS) $(INCLUDES) -c $< -o $@
 
 clean:
-	rm -f $(OBJS) $(OBJS_BONUS)
+	rm -f $(OBJS)
 
 fclean: clean
 	rm -f $(NAME)
 
 re: fclean all
 
-bonus: $(OBJS_BONUS)
-	$(AR) $(ARFLAGS) $(NAME) $(OBJS_BONUS)
-
-.PHONY: all clean fclean re bonus
+.PHONY: all clean fclean re
