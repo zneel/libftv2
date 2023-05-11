@@ -6,7 +6,7 @@
 /*   By: ebouvier <ebouvier@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/09 13:31:20 by ebouvier          #+#    #+#             */
-/*   Updated: 2023/04/28 13:58:36 by ebouvier         ###   ########.fr       */
+/*   Updated: 2023/05/02 14:21:40 by ebouvier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,8 @@ char	*ft_strnstr(const char *big, const char *little, size_t len)
 {
 	size_t	little_len;
 
+	if (!big && len == 0)
+		return (NULL);
 	if (!*little)
 		return ((char *)big);
 	little_len = ft_strlen(little);

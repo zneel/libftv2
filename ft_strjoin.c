@@ -6,7 +6,7 @@
 /*   By: ebouvier <ebouvier@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/26 20:29:03 by ebouvier          #+#    #+#             */
-/*   Updated: 2023/04/28 13:56:21 by ebouvier         ###   ########.fr       */
+/*   Updated: 2023/05/02 14:22:07 by ebouvier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,8 @@ char	*ft_strjoin(char const *s1, char const *s2)
 	size_t	l1;
 	size_t	l2;
 
+	if (!s1 || !s2)
+		return (NULL);
 	l1 = ft_strlen(s1);
 	l2 = ft_strlen(s2);
 	new = ft_calloc(l1 + l2 + 1, sizeof(char));

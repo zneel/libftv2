@@ -6,7 +6,7 @@
 /*   By: ebouvier <ebouvier@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/26 20:29:32 by ebouvier          #+#    #+#             */
-/*   Updated: 2023/04/28 13:56:58 by ebouvier         ###   ########.fr       */
+/*   Updated: 2023/05/03 09:02:26 by ebouvier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 	i = 0;
 	while (s[i])
 	{
-		new[i] = (*f)(i, s[i]);
+		new[i] = f(i, s[i]);
 		i++;
 	}
 	new[i] = 0;

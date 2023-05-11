@@ -6,12 +6,11 @@
 /*   By: ebouvier <ebouvier@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/09 13:31:21 by ebouvier          #+#    #+#             */
-/*   Updated: 2023/04/28 14:00:01 by ebouvier         ###   ########.fr       */
+/*   Updated: 2023/05/02 11:45:34 by ebouvier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <limits.h>
 
 char	*ft_strrchr(const char *s, int c)
 {

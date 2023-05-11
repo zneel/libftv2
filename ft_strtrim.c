@@ -6,13 +6,13 @@
 /*   By: ebouvier <ebouvier@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/26 20:11:36 by ebouvier          #+#    #+#             */
-/*   Updated: 2023/04/28 14:03:10 by ebouvier         ###   ########.fr       */
+/*   Updated: 2023/05/03 09:04:31 by ebouvier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	in_set(char c, const char *set)
+static int	in_set(char c, const char *set)
 {
 	while (*set)
 	{
@@ -23,7 +23,7 @@ int	in_set(char c, const char *set)
 	return (0);
 }
 
-size_t	trimmed_len(char const *s1, char const *set)
+static	size_t	trimmed_len(char const *s1, char const *set)
 {
 	size_t	len;
 	size_t	start;
@@ -45,7 +45,7 @@ char	*ft_strtrim(char const *s1, char const *set)
 	size_t	len;
 	size_t	trimmed;
 
-	if (!s1)
+	if (!s1 || !set)
 		return (NULL);
 	trimmed = trimmed_len(s1, set);
 	len = trimmed + 1;

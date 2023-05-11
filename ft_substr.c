@@ -6,7 +6,7 @@
 /*   By: ebouvier <ebouvier@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/26 19:54:24 by ebouvier          #+#    #+#             */
-/*   Updated: 2023/04/28 14:05:18 by ebouvier         ###   ########.fr       */
+/*   Updated: 2023/05/03 09:05:11 by ebouvier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,16 +15,16 @@
 char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
 	char	*new;
-	size_t	slen;
+	size_t	s_len;
 
 	if (!s)
 		return (NULL);
-	slen = ft_strlen(s);
-	if (start >= slen)
-		start = slen;
-	if (len > slen - start)
-		len = slen - start;
-	new = (char *)malloc((len + 1) * sizeof(char));
+	s_len = ft_strlen(s);
+	if (start >= s_len)
+		start = s_len;
+	if (len > s_len - start)
+		len = s_len - start;
+	new = malloc((len + 1) * sizeof(char));
 	if (!new)
 		return (NULL);
 	ft_memcpy(new, s + start, len);

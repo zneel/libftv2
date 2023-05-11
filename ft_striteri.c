@@ -6,7 +6,7 @@
 /*   By: ebouvier <ebouvier@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/26 20:36:57 by ebouvier          #+#    #+#             */
-/*   Updated: 2023/04/28 13:54:43 by ebouvier         ###   ########.fr       */
+/*   Updated: 2023/05/03 09:01:42 by ebouvier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,5 +19,5 @@ void	ft_striteri(char *s, void (*f)(unsigned int, char *))
 	i = 0;
 	if (s && f)
 		while (*s)
-			(*f)(i++, s++);
+			f(i++, s++);
 }

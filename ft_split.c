@@ -6,13 +6,13 @@
 /*   By: ebouvier <ebouvier@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/25 16:17:21 by ebouvier          #+#    #+#             */
-/*   Updated: 2023/04/28 13:54:08 by ebouvier         ###   ########.fr       */
+/*   Updated: 2023/05/02 14:39:00 by ebouvier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	word_count(char const *s, char c)
+static int	word_count(char const *s, char c)
 {
 	int	word;
 
@@ -33,7 +33,7 @@ int	word_count(char const *s, char c)
 	return (word);
 }
 
-void	*free_mem(char **new, int i)
+static void	*free_mem(char **new, int i)
 {
 	while (i--)
 	{
@@ -44,7 +44,7 @@ void	*free_mem(char **new, int i)
 	return (NULL);
 }
 
-int	word_len(char const *s, char c)
+static int	word_len(char const *s, char c)
 {
 	int	len;
 
@@ -54,16 +54,13 @@ int	word_len(char const *s, char c)
 	return (len);
 }
 
-char	**ft_split(char const *s, char c)
+static int	split(char **new, char const *s, char c)
 {
-	char	**new;
-	int		i;
-	int		w_len;
+	int	i;
+	int	w_len;
 
-	new = ft_calloc(word_count(s, c) + 1, sizeof(char *));
-	if (!new)
-		return (NULL);
 	i = 0;
+	w_len = 0;
 	while (*s)
 	{
 		while (*s == c)
@@ -73,12 +70,29 @@ char	**ft_split(char const *s, char c)
 			w_len = word_len(s, c);
 			new[i] = ft_calloc(w_len + 1, sizeof(char));
 			if (!new[i])
-				return (free_mem(new, i));
+			{
+				free_mem(new, i);
+				return (0);
+			}
 			ft_strlcpy(new[i], s, w_len + 1);
 			s += w_len;
 			i++;
 		}
 	}
 	new[i] = 0;
+	return (1);
+}
+
+char	**ft_split(char const *s, char c)
+{
+	char	**new;
+
+	if (!s)
+		return (NULL);
+	new = ft_calloc(word_count(s, c) + 1, sizeof(char *));
+	if (!new)
+		return (NULL);
+	if (!split(new, s, c))
+		return (NULL);
 	return (new);
 }

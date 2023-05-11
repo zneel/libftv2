@@ -6,7 +6,7 @@
 /*   By: ebouvier <ebouvier@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/28 19:43:45 by ebouvier          #+#    #+#             */
-/*   Updated: 2023/04/28 19:44:42 by ebouvier         ###   ########.fr       */
+/*   Updated: 2023/05/03 08:58:48 by ebouvier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ void	ft_lstiter(t_list *lst, void (*f)(void *))
 	current = lst;
 	while (current)
 	{
-		(*f)(current->content);
+		f(current->content);
 		current = current->next;
 	}
 }

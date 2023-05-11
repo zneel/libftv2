@@ -6,7 +6,7 @@
 /*   By: ebouvier <ebouvier@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/25 15:09:17 by ebouvier          #+#    #+#             */
-/*   Updated: 2023/04/28 13:31:47 by ebouvier         ###   ########.fr       */
+/*   Updated: 2023/05/02 10:24:18 by ebouvier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,8 @@
 
 void	ft_putendl_fd(char *s, int fd)
 {
+	if (!s)
+		return ;
 	write(fd, s, ft_strlen(s));
 	write(fd, "\n", 1);
 }

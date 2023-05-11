@@ -6,7 +6,7 @@
 /*   By: ebouvier <ebouvier@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/09 13:31:13 by ebouvier          #+#    #+#             */
-/*   Updated: 2023/04/28 13:56:25 by ebouvier         ###   ########.fr       */
+/*   Updated: 2023/05/02 14:20:37 by ebouvier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,8 @@ size_t	ft_strlcat(char *dst, const char *src, size_t size)
 	size_t	len_s;
 
 	i = 0;
+	if (!dst && size == 0)
+		return (0);
 	len_d = ft_strlen(dst);
 	len_s = ft_strlen(src);
 	if (size <= len_d)
