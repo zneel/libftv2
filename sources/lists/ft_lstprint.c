@@ -11,6 +11,7 @@
 /* ************************************************************************** */
 
 #include "libft.h"
+#include "lists.h"
 
 void	ft_lstprint_int(t_list *head)
 {

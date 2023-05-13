@@ -6,11 +6,11 @@
 /*   By: ebouvier <ebouvier@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/28 19:36:02 by ebouvier          #+#    #+#             */
-/*   Updated: 2023/05/02 15:09:12 by ebouvier         ###   ########.fr       */
+/*   Updated: 2023/05/12 10:06:35 by ebouvier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "lists.h"
 
 void	ft_lstclear(t_list **lst, void (*del)(void *))
 {

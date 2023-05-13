@@ -6,11 +6,11 @@
 /*   By: ebouvier <ebouvier@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/28 19:50:20 by ebouvier          #+#    #+#             */
-/*   Updated: 2023/04/30 12:58:33 by ebouvier         ###   ########.fr       */
+/*   Updated: 2023/05/12 10:07:57 by ebouvier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "lists.h"
 
 t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 {

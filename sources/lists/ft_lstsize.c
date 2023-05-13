@@ -6,11 +6,11 @@
 /*   By: ebouvier <ebouvier@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/28 18:06:37 by ebouvier          #+#    #+#             */
-/*   Updated: 2023/04/28 18:54:18 by ebouvier         ###   ########.fr       */
+/*   Updated: 2023/05/12 10:07:38 by ebouvier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "lists.h"
 
 int	ft_lstsize(t_list *lst)
 {
