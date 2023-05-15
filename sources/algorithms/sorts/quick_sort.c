@@ -6,11 +6,11 @@
 /*   By: ebouvier <ebouvier@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/12 18:37:01 by ebouvier          #+#    #+#             */
-/*   Updated: 2023/05/13 16:38:40 by ebouvier         ###   ########.fr       */
+/*   Updated: 2023/05/15 21:42:53 by ebouvier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-void	swap(int *a, int *b)
+static void	swap(int *a, int *b)
 {
 	int	temp;
 
@@ -19,7 +19,7 @@ void	swap(int *a, int *b)
 	*b = temp;
 }
 
-int	partition(int arr[], int low, int high)
+static int	partition(int arr[], int low, int high)
 {
 	int	pivot;
 	int	i;
