@@ -1,33 +1,41 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstprint.c                                      :+:      :+:    :+:   */
+/*   is_sorted.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ebouvier <ebouvier@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/05/11 23:36:33 by ebouvier          #+#    #+#             */
-/*   Updated: 2023/05/11 23:38:18by ebouvier         ###   ########.fr       */
+/*   Created: 2023/05/15 16:44:24 by ebouvier          #+#    #+#             */
+/*   Updated: 2023/05/15 16:48:52 by ebouvier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include "lists.h"
 
-void	ft_lstprint_int(t_list *head)
+int	is_sorted(int *tab, int length, int (*f)(int, int))
 {
-	while (head)
-	{
-		ft_putnbr_fd(*(int *)head->content, 1);
-		ft_putchar_fd('\n', 1);
-		head = head->next;
-	}
-}
+	int	i;
+	int	way;
 
-void	ft_lstprint_str(t_list *head)
-{
-	while (head)
+	i = 1;
+	way = 0;
+	if (length == 1 || length == 0)
+		return (1);
+	while (i < length)
 	{
-		ft_putstr_fd(head->content, 1);
-		head = head->next;
+		if ((*f)(tab[i - 1], tab[i]) > 0)
+		{
+			if (way == -1)
+				return (0);
+			way = 1;
+		}	
+		if ((*f)(tab[i - 1], tab[i]) < 0)
+		{
+			if (way == 1)
+				return (0);
+			way = -1;
+		}
+		i++;
 	}
+	return (1);
 }

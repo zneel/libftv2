@@ -28,7 +28,9 @@ SRCS = sources/conv/ft_atoi.c sources/conv/ft_itoa.c \
        sources/strings/ft_strlcpy.c sources/strings/ft_strlen.c \
        sources/strings/ft_strmapi.c sources/strings/ft_strncmp.c \
        sources/strings/ft_strnstr.c sources/strings/ft_strrchr.c \
-       sources/strings/ft_strtrim.c sources/strings/ft_substr.c
+       sources/strings/ft_strtrim.c sources/strings/ft_substr.c \
+       sources/algorithms/sorts/quick_sort.c \
+       sources/algorithms/sorts/is_sorted.c
 
 OBJS = $(SRCS:.c=.o)
 
