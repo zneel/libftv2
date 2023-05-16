@@ -19,6 +19,7 @@ SRCS = sources/conv/ft_atoi.c sources/conv/ft_itoa.c \
        sources/lists/ft_lstlast.c sources/lists/ft_lstmap.c sources/lists/ft_lstnew.c \
        sources/lists/ft_lstsize.c \
        sources/lists/ft_lstprint.c \
+       sources/lists/ft_lstreverse.c \
        sources/mem/ft_bzero.c sources/mem/ft_calloc.c sources/mem/ft_memchr.c \
        sources/mem/ft_memcmp.c sources/mem/ft_memcpy.c \
        sources/mem/ft_memmove.c sources/mem/ft_memset.c \

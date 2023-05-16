@@ -6,7 +6,7 @@
 /*   By: ebouvier <ebouvier@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/12 10:02:24 by ebouvier          #+#    #+#             */
-/*   Updated: 2023/05/15 17:50:51 by ebouvier         ###   ########.fr       */
+/*   Updated: 2023/05/16 22:48:11 by ebouvier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,6 +36,7 @@ t_list					*ft_lstnew(void *content);
 void					ft_lstprint_int(t_list *head);
 void					ft_lstprint_str(t_list *head);
 void					ft_lstadd_front(t_list **lst, t_list *new_node);
+t_list					*ft_lstreverse(t_list *head);
 int						ft_lstsize(t_list *lst);
 t_list					*ft_lstlast(t_list *lst);
 void					ft_lstadd_back(t_list **lst, t_list *new_node);

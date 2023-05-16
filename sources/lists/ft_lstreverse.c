@@ -1,33 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstprint.c                                      :+:      :+:    :+:   */
+/*   ft_lstreverse.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ebouvier <ebouvier@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/05/16 22:54:27 by ebouvier          #+#    #+#             */
-/*   Updated: 2023/05/16 22:54:30 by ebouvier         ###   ########.fr       */
+/*   Created: 2023/05/16 22:47:15 by ebouvier          #+#    #+#             */
+/*   Updated: 2023/05/16 22:54:56 by ebouvier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
 #include "lists.h"
 
-void	ft_lstprint_int(t_list *head)
+t_list	*ft_lstreverse(t_list *head)
 {
-	while (head)
-	{
-		ft_putnbr_fd(*(int *)head->content, 1);
-		ft_putchar_fd('\n', 1);
-		head = head->next;
-	}
-}
+	t_list	*prev;
+	t_list	*current;
+	t_list	*next;
 
-void	ft_lstprint_str(t_list *head)
-{
-	while (head)
+	prev = NULL;
+	current = head;
+	while (current != NULL)
 	{
-		ft_putstr_fd(head->content, 1);
-		head = head->next;
+		next = current->next;
+		current->next = prev;
+		prev = current;
+		current = next;
 	}
+	head = prev;
+	return (head);
 }

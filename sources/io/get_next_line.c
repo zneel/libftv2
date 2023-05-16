@@ -6,7 +6,7 @@
 /*   By: ebouvier <ebouvier@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/30 17:09:47 by ebouvier          #+#    #+#             */
-/*   Updated: 2023/05/11 22:53:51 by ebouvier         ###   ########.fr       */
+/*   Updated: 2023/05/16 22:54:00 by ebouvier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 ssize_t	line_size(t_gnl_list *head)
 {
 	t_gnl_list	*current;
-	ssize_t	total;
+	ssize_t		total;
 
 	current = head;
 	total = 0;
@@ -134,7 +134,7 @@ t_gnl_list	*lst_shift(t_gnl_list *head)
 char	*get_next_line(int fd)
 {
 	static t_gnl_list	*head;
-	char			*line;
+	char				*line;
 
 	if (fd < 0 || BUFFER_SIZE <= 0)
 		return (lst_free(&head), NULL);
