@@ -6,11 +6,17 @@ ARFLAGS = rcs
 
 INCLUDES = -I./includes
 
-SRCS = sources/conv/ft_atoi.c sources/conv/ft_itoa.c \
-       sources/ctypes/ft_isalnum.c sources/ctypes/ft_isalpha.c \
-       sources/ctypes/ft_isascii.c sources/ctypes/ft_isdigit.c \
-       sources/ctypes/ft_isprint.c sources/ctypes/ft_tolower.c \
+SRCS = sources/conv/ft_atoi.c \
+       sources/conv/ft_itoa.c \
+       sources/conv/ft_atoll.c \
+       sources/ctypes/ft_isalnum.c \
+       sources/ctypes/ft_isalpha.c \
+       sources/ctypes/ft_isascii.c \
+       sources/ctypes/ft_isdigit.c \
+       sources/ctypes/ft_isprint.c \
+       sources/ctypes/ft_tolower.c \
        sources/ctypes/ft_toupper.c \
+       sources/ctypes/ft_isspace.c \
        sources/io/ft_putchar_fd.c sources/io/ft_putendl_fd.c \
        sources/io/ft_putnbr_fd.c sources/io/ft_putstr_fd.c \
        sources/io/get_next_line.c sources/io/get_next_line_utils.c \

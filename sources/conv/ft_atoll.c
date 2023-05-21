@@ -1,21 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_atoi.c                                          :+:      :+:    :+:   */
+/*   ft_atoll.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ebouvier <ebouvier@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/04/09 13:30:28 by ebouvier          #+#    #+#             */
-/*   Updated: 2023/05/21 16:10:01 by ebouvier         ###   ########.fr       */
+/*   Created: 2023/05/21 16:10:08 by ebouvier          #+#    #+#             */
+/*   Updated: 2023/05/21 16:21:25 by ebouvier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_atoi(const char *s)
+static long long	overflow(int sign)
 {
-	int	sign;
-	int	res;
+	if (sign == 1)
+		return (LLONG_MAX);
+	else
+		return (LLONG_MIN);
+}
+
+long long	ft_atoll(const char *s)
+{
+	int			sign;
+	long long	res;
+	long long	prev_res;
 
 	sign = 1;
 	res = 0;
@@ -28,6 +37,11 @@ int	ft_atoi(const char *s)
 		s++;
 	}
 	while (ft_isdigit(*s))
+	{
+		prev_res = res;
 		res = res * 10 + *s++ - '0';
+		if (res < prev_res)
+			return (overflow(sign));
+	}
 	return (res * sign);
 }
