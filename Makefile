@@ -19,17 +19,17 @@ SRCS = sources/conv/ft_atoi.c \
        sources/ctypes/ft_isspace.c \
        sources/io/get_next_line.c \
        sources/io/get_next_line_utils.c \
-       source/io/ft_printf/ft_printf.c \
-       source/io/ft_printf/ntoa.c \
-       source/io/ft_printf/out.c \
-       source/io/ft_printf/print_c.c \
-       source/io/ft_printf/print_di.c \
-       source/io/ft_printf/print_p.c \
-       source/io/ft_printf/print_percent.c \
-       source/io/ft_printf/print_s.c \
-       source/io/ft_printf/print_u.c \
-       source/io/ft_printf/print_x.c \
-       source/io/ft_printf/utils.c \
+       sources/io/printf/ft_printf.c \
+       sources/io/printf/ntoa.c \
+       sources/io/printf/out.c \
+       sources/io/printf/print_c.c \
+       sources/io/printf/print_di.c \
+       sources/io/printf/print_p.c \
+       sources/io/printf/print_percent.c \
+       sources/io/printf/print_s.c \
+       sources/io/printf/print_u.c \
+       sources/io/printf/print_x.c \
+       sources/io/printf/utils.c \
        sources/lists/ft_lstadd_back.c \
        sources/lists/ft_lstadd_front.c \
        sources/lists/ft_lstclear.c \
