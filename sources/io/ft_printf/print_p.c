@@ -1,28 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putnbr_fd.c                                     :+:      :+:    :+:   */
+/*   print_p.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ebouvier <ebouvier@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/04/25 15:10:30 by ebouvier          #+#    #+#             */
-/*   Updated: 2023/04/29 13:35:55 by ebouvier         ###   ########.fr       */
+/*   Created: 2023/05/11 18:26:43 by ebouvier          #+#    #+#             */
+/*   Updated: 2023/05/11 18:31:04 by ebouvier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "ft_printf.h"
 
-void	ft_putnbr_fd(int n, int fd)
+void	print_p(t_state *state)
 {
-	long	l;
+	void	*ptr;
+	char	buffer[64];
+	size_t	utoalen;
 
-	l = n;
-	if (l < 0)
+	ptr = va_arg(state->args, void *);
+	if (!ptr)
+		state->bytes += out("(nil)", 5);
+	else
 	{
-		ft_putchar_fd('-', fd);
-		l = -l;
+		utoalen = ultoa_base(buffer, (unsigned long)ptr, B16_LOWER, 2);
+		buffer[0] = '0';
+		buffer[1] = 'x';
+		state->bytes += out(buffer, utoalen);
 	}
-	if (l > 9)
-		ft_putnbr_fd(l / 10, fd);
-	ft_putchar_fd(l % 10 + 48, fd);
 }

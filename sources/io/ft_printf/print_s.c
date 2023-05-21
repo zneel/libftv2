@@ -1,21 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putendl_fd.c                                    :+:      :+:    :+:   */
+/*   print_s.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ebouvier <ebouvier@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/04/25 15:09:17 by ebouvier          #+#    #+#             */
-/*   Updated: 2023/05/02 10:24:18 by ebouvier         ###   ########.fr       */
+/*   Created: 2023/05/11 18:24:44 by ebouvier          #+#    #+#             */
+/*   Updated: 2023/05/11 18:27:17 by ebouvier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "ft_printf.h"
 
-void	ft_putendl_fd(char *s, int fd)
+void	print_s(t_state *state)
 {
+	char	*s;
+
+	s = va_arg(state->args, char *);
 	if (!s)
-		return ;
-	write(fd, s, ft_strlen(s));
-	write(fd, "\n", 1);
+		s = "(null)";
+	state->bytes += out(s, ft_strlen(s));
 }

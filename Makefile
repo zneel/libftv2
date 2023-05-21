@@ -1,6 +1,6 @@
 NAME = libft.a
 CC = cc
-CFLAGS = -Wall -Wextra -Werror
+CFLAGS = -Wall -Wextra -Werror -O3
 AR = ar
 ARFLAGS = rcs
 
@@ -17,25 +17,51 @@ SRCS = sources/conv/ft_atoi.c \
        sources/ctypes/ft_tolower.c \
        sources/ctypes/ft_toupper.c \
        sources/ctypes/ft_isspace.c \
-       sources/io/ft_putchar_fd.c sources/io/ft_putendl_fd.c \
-       sources/io/ft_putnbr_fd.c sources/io/ft_putstr_fd.c \
-       sources/io/get_next_line.c sources/io/get_next_line_utils.c \
-       sources/lists/ft_lstadd_back.c sources/lists/ft_lstadd_front.c \
-       sources/lists/ft_lstclear.c sources/lists/ft_lstdelone.c sources/lists/ft_lstiter.c \
-       sources/lists/ft_lstlast.c sources/lists/ft_lstmap.c sources/lists/ft_lstnew.c \
+       sources/io/get_next_line.c \
+       sources/io/get_next_line_utils.c \
+       source/io/ft_printf/ft_printf.c \
+       source/io/ft_printf/ntoa.c \
+       source/io/ft_printf/out.c \
+       source/io/ft_printf/print_c.c \
+       source/io/ft_printf/print_di.c \
+       source/io/ft_printf/print_p.c \
+       source/io/ft_printf/print_percent.c \
+       source/io/ft_printf/print_s.c \
+       source/io/ft_printf/print_u.c \
+       source/io/ft_printf/print_x.c \
+       source/io/ft_printf/utils.c \
+       sources/lists/ft_lstadd_back.c \
+       sources/lists/ft_lstadd_front.c \
+       sources/lists/ft_lstclear.c \
+       sources/lists/ft_lstdelone.c \
+       sources/lists/ft_lstiter.c \
+       sources/lists/ft_lstlast.c \
+       sources/lists/ft_lstmap.c \
+       sources/lists/ft_lstnew.c \
        sources/lists/ft_lstsize.c \
        sources/lists/ft_lstprint.c \
        sources/lists/ft_lstreverse.c \
-       sources/mem/ft_bzero.c sources/mem/ft_calloc.c sources/mem/ft_memchr.c \
-       sources/mem/ft_memcmp.c sources/mem/ft_memcpy.c \
-       sources/mem/ft_memmove.c sources/mem/ft_memset.c \
-       sources/strings/ft_split.c sources/strings/ft_strchr.c \
-       sources/strings/ft_strdup.c sources/strings/ft_striteri.c \
-       sources/strings/ft_strjoin.c sources/strings/ft_strlcat.c \
-       sources/strings/ft_strlcpy.c sources/strings/ft_strlen.c \
-       sources/strings/ft_strmapi.c sources/strings/ft_strncmp.c \
-       sources/strings/ft_strnstr.c sources/strings/ft_strrchr.c \
-       sources/strings/ft_strtrim.c sources/strings/ft_substr.c \
+       sources/mem/ft_bzero.c \
+       sources/mem/ft_calloc.c \
+       sources/mem/ft_memchr.c \
+       sources/mem/ft_memcmp.c \
+       sources/mem/ft_memcpy.c \
+       sources/mem/ft_memmove.c \
+       sources/mem/ft_memset.c \
+       sources/strings/ft_split.c \
+       sources/strings/ft_strchr.c \
+       sources/strings/ft_strdup.c \
+       sources/strings/ft_striteri.c \
+       sources/strings/ft_strjoin.c \
+       sources/strings/ft_strlcat.c \
+       sources/strings/ft_strlcpy.c \
+       sources/strings/ft_strlen.c \
+       sources/strings/ft_strmapi.c \
+       sources/strings/ft_strncmp.c \
+       sources/strings/ft_strnstr.c \
+       sources/strings/ft_strrchr.c \
+       sources/strings/ft_strtrim.c \
+       sources/strings/ft_substr.c \
        sources/algorithms/sorts/quick_sort.c \
        sources/algorithms/sorts/is_sorted.c
 
