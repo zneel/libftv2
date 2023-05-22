@@ -6,22 +6,18 @@
 /*   By: ebouvier <ebouvier@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/09 13:30:19 by ebouvier          #+#    #+#             */
-/*   Updated: 2023/05/21 16:23:54 by ebouvier         ###   ########.fr       */
+/*   Updated: 2023/05/22 21:24:47 by ebouvier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef LIBFT_H
 # define LIBFT_H
 
+# include "ft_printf.h"
 # include <limits.h>
 # include <stdlib.h>
 # include <string.h>
 # include <unistd.h>
-
-void		ft_putchar_fd(char c, int fd);
-void		ft_putstr_fd(char *s, int fd);
-void		ft_putendl_fd(char *s, int fd);
-void		ft_putnbr_fd(int n, int fd);
 
 size_t		ft_strlen(const char *s);
 size_t		ft_strlcpy(char *dst, const char *src, size_t size);
