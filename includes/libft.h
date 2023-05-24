@@ -6,7 +6,7 @@
 /*   By: ebouvier <ebouvier@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/09 13:30:19 by ebouvier          #+#    #+#             */
-/*   Updated: 2023/05/22 21:24:47 by ebouvier         ###   ########.fr       */
+/*   Updated: 2023/05/23 14:31:11 by ebouvier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 # define LIBFT_H
 
 # include "ft_printf.h"
+# include "get_next_line.h"
 # include <limits.h>
 # include <stdlib.h>
 # include <string.h>
