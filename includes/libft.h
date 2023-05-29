@@ -6,7 +6,7 @@
 /*   By: ebouvier <ebouvier@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/09 13:30:19 by ebouvier          #+#    #+#             */
-/*   Updated: 2023/05/23 14:31:11 by ebouvier         ###   ########.fr       */
+/*   Updated: 2023/05/29 11:00:20 by ebouvier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,7 @@ char		*ft_itoa(int n);
 int			ft_atoi(const char *s);
 long long	ft_atoll(const char *s);
 
-char		**ft_split(char const *s, char c);
+char		**ft_split(char const *s, const char *charset);
 char		*ft_strtrim(char const *s1, char const *set);
 char		*ft_strmapi(char const *s, char (*f)(unsigned int, char));
 void		ft_striteri(char *s, void (*f)(unsigned int, char *));
