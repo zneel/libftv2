@@ -6,7 +6,7 @@
 /*   By: ebouvier <ebouvier@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/16 22:54:27 by ebouvier          #+#    #+#             */
-/*   Updated: 2023/05/22 21:25:24 by ebouvier         ###   ########.fr       */
+/*   Updated: 2023/05/29 21:55:14 by ebouvier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ void	ft_lstprint_str(t_list *head)
 {
 	while (head)
 	{
-		ft_printf("%d", head->content);
+		ft_printf("%s", head->content);
 		head = head->next;
 	}
 }
