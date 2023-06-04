@@ -6,7 +6,7 @@
 /*   By: ebouvier <ebouvier@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/09 13:30:19 by ebouvier          #+#    #+#             */
-/*   Updated: 2023/05/29 11:00:20 by ebouvier         ###   ########.fr       */
+/*   Updated: 2023/06/04 17:21:15 by ebouvier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,5 +61,8 @@ void		ft_bzero(void *s, size_t n);
 
 int			is_sorted(int *tab, int length, int (*f)(int, int));
 void		quick_sort(int arr[], int low, int high);
+
+void		ft_putstr_fd(char *s, int fd);
+void		ft_putendl_fd(char *s, int fd);
 
 #endif

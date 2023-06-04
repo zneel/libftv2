@@ -6,7 +6,7 @@
 /*   By: ebouvier <ebouvier@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/30 17:06:33 by ebouvier          #+#    #+#             */
-/*   Updated: 2023/05/11 22:53:48 by ebouvier         ###   ########.fr       */
+/*   Updated: 2023/06/04 20:17:10 by ebouvier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 # define GET_NEXT_LINE_H
 
 # ifndef BUFFER_SIZE
-#  define BUFFER_SIZE 4096
+#  define BUFFER_SIZE 2048
 # endif
 
 # include "libft.h"

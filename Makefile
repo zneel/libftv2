@@ -30,6 +30,8 @@ SRCS = sources/conv/ft_atoi.c \
        sources/io/printf/print_u.c \
        sources/io/printf/print_x.c \
        sources/io/printf/utils.c \
+       sources/io/ft_putstr_fd.c \
+       sources/io/ft_putendl_fd.c \
        sources/lists/ft_lstadd_back.c \
        sources/lists/ft_lstadd_front.c \
        sources/lists/ft_lstclear.c \
