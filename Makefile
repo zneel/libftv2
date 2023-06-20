@@ -65,7 +65,8 @@ SRCS = sources/conv/ft_atoi.c \
        sources/strings/ft_strtrim.c \
        sources/strings/ft_substr.c \
        sources/algorithms/sorts/quick_sort.c \
-       sources/algorithms/sorts/is_sorted.c
+       sources/algorithms/sorts/is_sorted.c \
+       sources/ads/stack.c
 
 OBJS = $(SRCS:.c=.o)
 

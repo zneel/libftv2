@@ -6,15 +6,13 @@
 /*   By: ebouvier <ebouvier@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/09 13:30:19 by ebouvier          #+#    #+#             */
-/*   Updated: 2023/06/04 17:21:15 by ebouvier         ###   ########.fr       */
+/*   Updated: 2023/06/14 18:50:08 by ebouvier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef LIBFT_H
 # define LIBFT_H
 
-# include "ft_printf.h"
-# include "get_next_line.h"
 # include <limits.h>
 # include <stdlib.h>
 # include <string.h>
