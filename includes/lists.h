@@ -6,7 +6,7 @@
 /*   By: ebouvier <ebouvier@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/12 10:02:24 by ebouvier          #+#    #+#             */
-/*   Updated: 2023/05/16 22:48:11 by ebouvier         ###   ########.fr       */
+/*   Updated: 2023/07/06 09:17:58 by ebouvier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,9 +28,6 @@ typedef struct s_dbl_list
 	struct s_dbl_list	*next;
 	struct s_dbl_list	*prev;
 }						t_dbl_list;
-
-t_dbl_list				*new_dbl_node(void *content);
-void					append(t_dbl_list **start, void *content);
 
 t_list					*ft_lstnew(void *content);
 void					ft_lstprint_int(t_list *head);
