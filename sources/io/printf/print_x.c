@@ -6,7 +6,7 @@
 /*   By: ebouvier <ebouvier@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/11 18:24:31 by ebouvier          #+#    #+#             */
-/*   Updated: 2023/05/11 18:30:43 by ebouvier         ###   ########.fr       */
+/*   Updated: 2023/07/23 12:08:46 by ebouvier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ void	print_x(t_state *state)
 
 	x = va_arg(state->args, unsigned int);
 	itoalen = ultoa_base(buffer, x, B16_LOWER, 0);
-	state->bytes += out(buffer, itoalen);
+	state->bytes += out(state->fd, buffer, itoalen);
 }
 
 void	print_big_x(t_state *state)
@@ -31,5 +31,5 @@ void	print_big_x(t_state *state)
 
 	big_x = va_arg(state->args, unsigned int);
 	itoalen = ultoa_base(buffer, big_x, B16_UPPER, 0);
-	state->bytes += out(buffer, itoalen);
+	state->bytes += out(state->fd, buffer, itoalen);
 }

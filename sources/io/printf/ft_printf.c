@@ -6,7 +6,7 @@
 /*   By: ebouvier <ebouvier@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/06 21:11:45 by ebouvier          #+#    #+#             */
-/*   Updated: 2023/05/11 18:27:06 by ebouvier         ###   ########.fr       */
+/*   Updated: 2023/07/23 12:10:02 by ebouvier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,10 +66,11 @@ void	parse_fmt(const char **fmt, t_state *state)
 	}
 }
 
-void	init_state(t_state *state)
+static void	init_state(t_state *state)
 {
 	state->bytes = 0;
 	state->flags = 0;
+	state->fd = 1;
 }
 
 int	ft_printf(const char *fmt, ...)

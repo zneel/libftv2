@@ -1,5 +1,5 @@
 NAME = libft.a
-CC = cc
+CC = clang
 CFLAGS = -Wall -Wextra -Werror
 AR = ar
 ARFLAGS = rcs
@@ -30,6 +30,7 @@ SRCS = sources/conv/ft_atoi.c \
        sources/io/printf/print_u.c \
        sources/io/printf/print_x.c \
        sources/io/printf/utils.c \
+       sources/io/printf/ft_dprintf.c \
        sources/io/ft_putstr_fd.c \
        sources/io/ft_putendl_fd.c \
        sources/lists/ft_lstadd_back.c \

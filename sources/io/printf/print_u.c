@@ -6,7 +6,7 @@
 /*   By: ebouvier <ebouvier@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/11 18:24:24 by ebouvier          #+#    #+#             */
-/*   Updated: 2023/05/11 18:30:40 by ebouvier         ###   ########.fr       */
+/*   Updated: 2023/07/23 12:08:35 by ebouvier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,5 +20,5 @@ void	print_u(t_state *state)
 
 	u = va_arg(state->args, unsigned int);
 	uitoalen = uitoa_base(buffer, u, B10);
-	state->bytes += out(buffer, uitoalen);
+	state->bytes += out(state->fd, buffer, uitoalen);
 }

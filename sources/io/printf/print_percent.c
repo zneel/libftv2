@@ -6,7 +6,7 @@
 /*   By: ebouvier <ebouvier@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/11 18:24:13 by ebouvier          #+#    #+#             */
-/*   Updated: 2023/05/11 18:30:35 by ebouvier         ###   ########.fr       */
+/*   Updated: 2023/07/23 12:08:23 by ebouvier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,5 +14,5 @@
 
 void	print_percent(t_state *state)
 {
-	state->bytes += write(1, "%", 1);
+	state->bytes += write(state->fd, "%", 1);
 }

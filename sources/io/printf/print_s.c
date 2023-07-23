@@ -6,7 +6,7 @@
 /*   By: ebouvier <ebouvier@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/11 18:24:44 by ebouvier          #+#    #+#             */
-/*   Updated: 2023/05/11 18:27:17 by ebouvier         ###   ########.fr       */
+/*   Updated: 2023/07/23 12:08:29 by ebouvier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,5 +19,5 @@ void	print_s(t_state *state)
 	s = va_arg(state->args, char *);
 	if (!s)
 		s = "(null)";
-	state->bytes += out(s, ft_strlen(s));
+	state->bytes += out(state->fd, s, ft_strlen(s));
 }

@@ -6,7 +6,7 @@
 /*   By: ebouvier <ebouvier@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/14 13:36:33 by ebouvier          #+#    #+#             */
-/*   Updated: 2023/07/06 09:47:47 by ebouvier         ###   ########.fr       */
+/*   Updated: 2023/07/23 12:12:14 by ebouvier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,4 +48,11 @@ void	*stack_peek(t_stack *stack)
 	if (!stack)
 		return (STACK_EMPTY);
 	return (stack->content);
+}
+
+t_bool	stack_is_empty(t_stack *stack)
+{
+	if (!stack)
+		return (true);
+	return (false);
 }

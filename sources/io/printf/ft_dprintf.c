@@ -1,31 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   print_p.c                                          :+:      :+:    :+:   */
+/*   ft_dprintf.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ebouvier <ebouvier@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/05/11 18:26:43 by ebouvier          #+#    #+#             */
-/*   Updated: 2023/07/23 12:08:14 by ebouvier         ###   ########.fr       */
+/*   Created: 2023/07/23 12:03:55 by ebouvier          #+#    #+#             */
+/*   Updated: 2023/07/23 12:12:00 by ebouvier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-void	print_p(t_state *state)
+static void	init_state(int fd, t_state *state)
 {
-	void	*ptr;
-	char	buffer[64];
-	size_t	utoalen;
+	state->bytes = 0;
+	state->flags = 0;
+	state->fd = fd;
+}
 
-	ptr = va_arg(state->args, void *);
-	if (!ptr)
-		state->bytes += out(state->fd, "(nil)", 5);
-	else
-	{
-		utoalen = ultoa_base(buffer, (unsigned long)ptr, B16_LOWER, 2);
-		buffer[0] = '0';
-		buffer[1] = 'x';
-		state->bytes += out(state->fd, buffer, utoalen);
-	}
+int	ft_dprintf(int fd, const char *fmt, ...)
+{
+	t_state	state;
+
+	if (!fmt || fd < 0)
+		return (-1);
+	init_state(fd, &state);
+	va_start(state.args, fmt);
+	init_func_table(&state);
+	parse_fmt(&fmt, &state);
+	va_end(state.args);
+	return (state.bytes);
 }
