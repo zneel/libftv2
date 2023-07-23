@@ -6,7 +6,7 @@
 /*   By: ebouvier <ebouvier@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/06 21:11:45 by ebouvier          #+#    #+#             */
-/*   Updated: 2023/07/23 12:10:02 by ebouvier         ###   ########.fr       */
+/*   Updated: 2023/07/23 19:40:53 by ebouvier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,7 +54,7 @@ void	parse_fmt(const char **fmt, t_state *state)
 	{
 		if (**fmt != '%')
 		{
-			state->bytes += write(1, *fmt, 1);
+			state->bytes += write(state->fd, *fmt, 1);
 			(*fmt)++;
 			continue ;
 		}
