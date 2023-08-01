@@ -4,6 +4,18 @@ CFLAGS = -Wall -Wextra -Werror
 AR = ar
 ARFLAGS = rcs
 
+ifeq ($(DEBUG), 1)
+	CFLAGS+=-g3 -gdwarf-4
+endif
+
+ifeq ($(SAN), 1)
+	CFLAGS+=-fsanitize=address -gdwarf-4
+endif
+
+ifeq ($(DEV), 1)
+	CFLAGS+=-fsanitize=address -g3 -gdwarf-4
+endif
+
 INCLUDES = -I./includes
 
 SRCS = sources/conv/ft_atoi.c \
