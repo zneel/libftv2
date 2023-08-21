@@ -6,11 +6,25 @@
 /*   By: ebouvier <ebouvier@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/14 13:36:33 by ebouvier          #+#    #+#             */
-/*   Updated: 2023/07/23 12:12:14 by ebouvier         ###   ########.fr       */
+/*   Updated: 2023/08/21 15:24:23 by ebouvier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "stack.h"
+
+void	stack_delete(t_stack *stack, void (*del)(void *))
+{
+	t_stack	*tmp;
+
+	while (stack)
+	{
+		tmp = stack->next;
+		if (del)
+			del(stack->content);
+		free(stack);
+		stack = tmp;
+	}
+}
 
 void	stack_push(t_stack **stack, void *content)
 {
@@ -36,7 +50,7 @@ void	stack_pop(t_stack **stack, void (*del)(void *))
 {
 	t_stack	*tmp;
 
-	if (!*stack || !(*stack)->next)
+	if (!*stack)
 		return ;
 	tmp = *stack;
 	*stack = (*stack)->next;
