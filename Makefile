@@ -63,6 +63,7 @@ SRCS = sources/conv/ft_atoi.c \
        sources/mem/ft_memcpy.c \
        sources/mem/ft_memmove.c \
        sources/mem/ft_memset.c \
+       sources/mem/ft_realloc.c \
        sources/strings/ft_split.c \
        sources/strings/ft_strchr.c \
        sources/strings/ft_strdup.c \
