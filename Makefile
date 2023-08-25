@@ -21,6 +21,7 @@ INCLUDES = -I./includes
 SRCS = sources/conv/ft_atoi.c \
        sources/conv/ft_itoa.c \
        sources/conv/ft_atoll.c \
+       sources/conv/ft_lltoa_base.c \
        sources/ctypes/ft_isalnum.c \
        sources/ctypes/ft_isalpha.c \
        sources/ctypes/ft_isascii.c \

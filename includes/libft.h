@@ -6,7 +6,7 @@
 /*   By: ebouvier <ebouvier@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/09 13:30:19 by ebouvier          #+#    #+#             */
-/*   Updated: 2023/08/24 14:02:17 by ebouvier         ###   ########.fr       */
+/*   Updated: 2023/08/25 14:03:01 by ebouvier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,6 +36,7 @@ char			*ft_strdup(const char *s);
 char			*ft_itoa(int n);
 int				ft_atoi(const char *s);
 long long		ft_atoll(const char *s);
+char			*ft_lltoa_base(long long n, char *base);
 
 char			**ft_split(char const *s, const char *charset);
 char			*ft_strtrim(char const *s1, char const *set);
