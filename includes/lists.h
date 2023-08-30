@@ -6,7 +6,7 @@
 /*   By: ebouvier <ebouvier@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/12 10:02:24 by ebouvier          #+#    #+#             */
-/*   Updated: 2023/07/06 09:17:58 by ebouvier         ###   ########.fr       */
+/*   Updated: 2023/08/30 15:35:54 by ebouvier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,11 @@
 
 typedef struct s_list
 {
-	void				*content;
+	union
+	{
+		int				n;
+		void			*content;
+	};
 	struct s_list		*next;
 }						t_list;
 
@@ -30,6 +34,7 @@ typedef struct s_dbl_list
 }						t_dbl_list;
 
 t_list					*ft_lstnew(void *content);
+t_list					*ft_lstnew_int(int n);
 void					ft_lstprint_int(t_list *head);
 void					ft_lstprint_str(t_list *head);
 void					ft_lstadd_front(t_list **lst, t_list *new_node);
