@@ -5,38 +5,24 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: ebouvier <ebouvier@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/04/30 17:06:33 by ebouvier          #+#    #+#             */
-/*   Updated: 2023/06/04 20:17:10 by ebouvier         ###   ########.fr       */
+/*   Created: 2023/05/15 12:22:33 by mhoyer            #+#    #+#             */
+/*   Updated: 2023/09/06 11:41:11 by ebouvier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef GET_NEXT_LINE_H
 # define GET_NEXT_LINE_H
 
-# ifndef BUFFER_SIZE
-#  define BUFFER_SIZE 2048
-# endif
-
-# include "libft.h"
+# include <fcntl.h>
 # include <stdlib.h>
-# include <string.h>
 # include <unistd.h>
 
-typedef struct s_gnl_list
-{
-	struct s_gnl_list	*next;
-	char				*data;
-	ssize_t				read;
-	ssize_t				eol;
-	int					eol_found;
-	int					eof;
-}						t_gnl_list;
+char	*get_next_line(int fd, int i);
 
-char					*get_next_line(int fd);
-t_gnl_list				*lst_new(void);
-t_gnl_list				*lst_append(t_gnl_list *head);
-void					lst_free(t_gnl_list **head);
-void					*ft_memcpy(void *dest, const void *src, size_t n);
-void					*ft_memchr(const void *s, int c, size_t n);
+char	*ft_strdup_gnl(char *s, int deb, int end);
+
+int		ft_strlen_gnl(const char *s);
+
+char	*ft_strjoin_gnl(char *s1, char *s2, int t_s2);
 
 #endif

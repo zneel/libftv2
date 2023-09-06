@@ -5,151 +5,97 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: ebouvier <ebouvier@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/04/30 17:09:47 by ebouvier          #+#    #+#             */
-/*   Updated: 2023/05/21 21:58:05 by ebouvier         ###   ########.fr       */
+/*   Created: 2023/05/15 12:22:40 by mhoyer            #+#    #+#             */
+/*   Updated: 2023/09/06 11:40:52 by ebouvier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "get_next_line.h"
 
-ssize_t	line_size(t_gnl_list *head)
-{
-	t_gnl_list	*current;
-	ssize_t		total;
+#ifndef BUFFER_SIZE
+# define BUFFER_SIZE 1
+#endif
 
-	current = head;
-	total = 0;
-	while (current)
+int	valide(char *str, int start)
+{
+	int	i;
+
+	i = start;
+	while (str[i])
 	{
-		if (current->eol_found)
-		{
-			total += current->eol + 1;
-			break ;
-		}
-		if (current->read > 0)
-			total += current->read;
-		current = current->next;
+		if (str[i] == '\n')
+			return (i);
+		i++;
 	}
-	return (total);
+	return (0);
 }
 
-/*
-* Takes a linked list as input and calculate the line length
-* Iterate over the linked list and copy the data to the line buffer
-* Stop copy after an EOL is found or EOF is reached.
-*/
-
-char	*lst_to_line(t_gnl_list *head)
+int	find_retour(char *str, int i)
 {
-	ssize_t	line_len;
-	size_t	copied;
-	char	*line;
+	if (i == 0 && str[0] == '\n')
+		return (0);
+	while (i != 0)
+	{
+		i--;
+		if (str[i] == '\n')
+			return (i + 1);
+	}
+	return (0);
+}
 
-	line_len = line_size(head);
-	line = malloc(sizeof(char) * (line_len + 1));
-	if (!line)
+char	*get_read(int fd, char *buffer, int *val)
+{
+	char	*buffer_tmp;
+
+	buffer_tmp = malloc((BUFFER_SIZE + 1) * sizeof(char));
+	if (!buffer_tmp)
 		return (NULL);
-	line[line_len] = 0;
-	copied = 0;
-	while (head)
+	*val = read(fd, buffer_tmp, BUFFER_SIZE);
+	if (*val <= 0 && !buffer)
 	{
-		if (!head->eof && !head->eol_found)
-		{
-			ft_memcpy(line + copied, head->data, head->read);
-			copied += head->read;
-		}
-		else if (head->eol_found)
-		{
-			ft_memcpy(line + copied, head->data, head->eol + 1);
-			break ;
-		}
-		head = head->next;
-	}
-	return (line);
-}
-
-/*
-* Iterate the linked list node and read data from the fd
-* to the node data buffer
-* Continue reading and appending until EOL or EOF is found.
-*/
-
-t_gnl_list	*read_to_lst(t_gnl_list *head, int fd)
-{
-	t_gnl_list	*c;
-
-	c = head;
-	while (1 && c)
-	{
-		if (c->read == 0 && c->eof == 0)
-		{
-			c->data = malloc(sizeof(char) * BUFFER_SIZE);
-			if (!c->data)
-				return (lst_free(&head), NULL);
-			c->read = read(fd, c->data, BUFFER_SIZE);
-			c->eof = c->read <= 0;
-		}
-		if (c->eof || c->eol_found)
-			break ;
-		c->eol_found = ft_memchr(c->data, '\n', c->read) != 0;
-		if (c->eol_found)
-			c->eol = (char *)ft_memchr(c->data, '\n', c->read) - c->data;
-		else
-			c = lst_append(c);
-	}
-	return (head);
-}
-
-/*
-* Goes to the last element of the list
-* Create a new node
-* Copy the remaining data after the EOL char
-* Free the linked list
-* Return new head
-*/
-
-t_gnl_list	*lst_shift(t_gnl_list *head)
-{
-	t_gnl_list	*new;
-	t_gnl_list	*tail;
-
-	tail = head;
-	while (tail->next)
-		tail = tail->next;
-	new = lst_new();
-	if (!new)
-		return (lst_free(&head), NULL);
-	new->eof = tail->eof;
-	if (!tail->eof && tail->read - (tail->eol + 1) != 0)
-	{
-		new->read = tail->read - (tail->eol + 1);
-		new->data = malloc(sizeof(char) * new->read);
-		if (!new->data)
-			return (lst_free(&head), NULL);
-		ft_memcpy(new->data, tail->data + tail->eol + 1, new->read);
-	}
-	return (lst_free(&head), new);
-}
-
-char	*get_next_line(int fd)
-{
-	static t_gnl_list	*head;
-	char				*line;
-
-	if (fd < 0 || BUFFER_SIZE <= 0)
-		return (lst_free(&head), NULL);
-	if (!head)
-	{
-		head = lst_new();
-		if (!head)
-			return (NULL);
-	}
-	head = read_to_lst(head, fd);
-	if (!head)
+		free(buffer_tmp);
 		return (NULL);
-	if (head->eof)
-		return (lst_free(&head), NULL);
-	line = lst_to_line(head);
-	head = lst_shift(head);
-	return (line);
+	}
+	buffer_tmp[*val] = '\0';
+	buffer = ft_strjoin_gnl(buffer, buffer_tmp, *val);
+	return (buffer);
+}
+
+char	*free_return(char **buffer)
+{
+	if (*buffer)
+	{
+		free(*buffer);
+		*buffer = NULL;
+	}
+	return (NULL);
+}
+
+char	*get_next_line(int fd, int s)
+{
+	static char	*buffer = NULL;
+	static int	deb = 0;
+	int			val;
+
+	if (s && (fd < 0 || read(fd, 0, 0) < 0 || BUFFER_SIZE <= 0 || deb == -1))
+		return (NULL);
+	if (s)
+		buffer = get_read(fd, buffer, &val);
+	while (s && (buffer && deb >= 0 && buffer[deb]))
+	{
+		if (!valide(buffer, deb) && val > 0)
+			buffer = get_read(fd, buffer, &val);
+		deb++;
+		if (buffer[deb - 1] == '\n')
+			return (ft_strdup_gnl(buffer, find_retour(buffer, deb - 1), deb));
+	}
+	if (s && (buffer && val == 0 && deb > 0))
+	{
+		val = deb;
+		deb = -1;
+		if (val != find_retour(buffer, val))
+			return (ft_strdup_gnl(buffer, find_retour(buffer, val), val));
+	}
+	deb = 0;
+	return (free_return(&buffer));
 }

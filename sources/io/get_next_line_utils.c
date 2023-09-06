@@ -5,56 +5,90 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: ebouvier <ebouvier@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/04/30 17:10:07 by ebouvier          #+#    #+#             */
-/*   Updated: 2023/05/11 22:54:00 by ebouvier         ###   ########.fr       */
+/*   Created: 2023/05/15 12:22:51 by mhoyer            #+#    #+#             */
+/*   Updated: 2023/09/06 11:34:27 by ebouvier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "get_next_line.h"
 
-t_gnl_list	*lst_new(void)
+int	ft_strlen_gnl(const char *s)
 {
-	t_gnl_list	*new;
+	int	i;
 
-	new = malloc(sizeof(t_gnl_list));
-	if (!new)
-		return (NULL);
-	new->next = NULL;
-	new->data = NULL;
-	new->read = 0;
-	new->eol = 0;
-	new->eol_found = 0;
-	new->eof = 0;
-	return (new);
+	i = 0;
+	while (s[i])
+		i++;
+	return (i);
 }
 
-t_gnl_list	*lst_append(t_gnl_list *head)
+void	*ft_memcpy_gnl(void *dest, const void *src, int deb, int end)
 {
-	t_gnl_list	*tail;
-	t_gnl_list	*new_node;
+	const char	*s;
+	char		*d;
+	int			i;
 
-	tail = head;
-	new_node = lst_new();
-	if (!new_node)
+	if (!dest)
 		return (NULL);
-	while (tail->next)
-		tail = tail->next;
-	tail->next = new_node;
-	return (new_node);
-}
-
-void	lst_free(t_gnl_list **head)
-{
-	t_gnl_list	*current;
-	t_gnl_list	*next;
-
-	current = *head;
-	while (current)
+	s = src;
+	d = dest;
+	i = 0;
+	while (deb < end)
 	{
-		next = current->next;
-		free(current->data);
-		free(current);
-		current = next;
+		d[i] = s[deb];
+		deb++;
+		i++;
 	}
-	*head = NULL;
+	return (dest);
+}
+
+char	*ft_strdup_gnl(char *s, int deb, int end)
+{
+	char	*str;
+
+	str = malloc((end - deb) + 1);
+	if (!str)
+		return (NULL);
+	if (ft_memcpy_gnl(str, s, deb, end) == NULL)
+		return (NULL);
+	str[end - deb] = '\0';
+	return (str);
+}
+
+char	*ft_strdup_free(char *s, int deb, int end)
+{
+	char	*str;
+
+	str = ft_strdup_gnl(s, deb, end);
+	free(s);
+	return (str);
+}
+
+char	*ft_strjoin_gnl(char *s1, char *s2, int t_s2)
+{
+	int		i;
+	int		t_s1;
+	char	*conc;
+
+	if (!s1)
+		return (ft_strdup_free(s2, 0, t_s2));
+	t_s1 = ft_strlen_gnl(s1);
+	i = 0;
+	conc = malloc(t_s1 + t_s2 + 1);
+	if (conc == NULL)
+		return (NULL);
+	while (i < t_s1)
+	{
+		conc[i] = s1[i];
+		i++;
+	}
+	while (i < t_s1 + t_s2)
+	{
+		conc[i] = s2[i - t_s1];
+		i++;
+	}
+	conc[i] = '\0';
+	free(s1);
+	free(s2);
+	return (conc);
 }
