@@ -6,7 +6,7 @@
 /*   By: ebouvier <ebouvier@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/09 13:30:19 by ebouvier          #+#    #+#             */
-/*   Updated: 2023/08/25 14:03:01 by ebouvier         ###   ########.fr       */
+/*   Updated: 2023/09/24 21:45:02 by ebouvier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,7 @@
 typedef bool	t_bool;
 
 size_t			ft_strlen(const char *s);
+size_t			ft_strnlen(const char *s, size_t maxlen);
 size_t			ft_strlcpy(char *dst, const char *src, size_t size);
 size_t			ft_strlcat(char *dst, const char *src, size_t size);
 char			*ft_strchr(const char *s, int c);
@@ -32,6 +33,7 @@ char			*ft_strnstr(const char *big, const char *little, size_t len);
 char			*ft_substr(char const *s, unsigned int start, size_t len);
 char			*ft_strjoin(char const *s1, char const *s2);
 char			*ft_strdup(const char *s);
+char			*ft_strndup(const char *s, size_t n);
 
 char			*ft_itoa(int n);
 int				ft_atoi(const char *s);

@@ -68,10 +68,12 @@ SRCS = sources/conv/ft_atoi.c \
        sources/strings/ft_split.c \
        sources/strings/ft_strchr.c \
        sources/strings/ft_strdup.c \
+       sources/strings/ft_strndup.c \
        sources/strings/ft_striteri.c \
        sources/strings/ft_strjoin.c \
        sources/strings/ft_strlcat.c \
        sources/strings/ft_strlcpy.c \
+       sources/strings/ft_strnlen.c \
        sources/strings/ft_strlen.c \
        sources/strings/ft_strmapi.c \
        sources/strings/ft_strncmp.c \

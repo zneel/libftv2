@@ -1,30 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strdup.c                                        :+:      :+:    :+:   */
+/*   ft_strnlen.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ebouvier <ebouvier@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/04/09 13:30:56 by ebouvier          #+#    #+#             */
-/*   Updated: 2023/09/24 21:35:49 by ebouvier         ###   ########.fr       */
+/*   Created: 2023/09/24 21:44:17 by ebouvier          #+#    #+#             */
+/*   Updated: 2023/09/24 21:45:04 by ebouvier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strdup(const char *s)
+size_t	ft_strnlen(const char *s, size_t maxlen)
 {
-	char	*new;
-	size_t	len;
+	size_t	i;
 
-	len = ft_strlen(s) + 1;
-	new = malloc(sizeof(char) * len);
-	if (!new)
-		return (NULL);
-	if (ft_strlcpy(new, s, len) >= len)
-	{
-		free(new);
-		return (NULL);
-	}
-	return (new);
+	i = 0;
+	while (s[i] && i < maxlen)
+		i++;
+	return (i);
 }
